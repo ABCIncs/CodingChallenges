@@ -173,3 +173,16 @@ func validatePassword(password: String) -> Bool {
         return false
     }
 }
+
+
+// 6. A simple algorithm to inverse an integer without using a loop
+func reverseIntegers(_ number: Int, _ result: String) -> Int {
+    
+    let quotient = number / 10
+    let remainder = number % 10;
+    
+    var result = result
+    result += String(remainder);
+    return quotient >= 10 ? reverseIntegers(quotient, result) : Int(result + String(quotient))!
+}
+//print(reverseIntegers(321, ""))
